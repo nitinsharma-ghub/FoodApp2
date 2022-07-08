@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <label for="email">Email: </label>
+    <div>
+        <input type="email" id="email" required>
+    </div><br>
+    <label for="pass">Password: </label>
+    <div>
+        <input type="password" id="pass" required>
+    </div><br>
+    <button>Log In</button>
+
+    <a href="http://127.0.0.1:3000/signUp">SignUp</a>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click',async function(e){
+            e.preventDefault();
+            
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("pass").value;
+
+            let resp = await axios.post('/logIn', {email,password});
+        });
+    </script>
+</body>
+</html>

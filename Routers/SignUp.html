@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+        .buttons{
+            display: flex;
+        }
+    </style>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <label for="name">Name: </label>
+    <div class="primary">
+        <input type="text" name="myname" id="name" required>
+    </div><br>
+    <label for="email">Email: </label>
+    <div>
+        <input type="email" id="email" required>
+    </div><br>
+    <label for="pass">Password: </label>
+    <div>
+        <input type="password" id="pass" required>
+    </div><br>
+    <label for="pass">Confirm Password: </label>
+    <div>
+        <input type="password" id="Conpass" required>
+    </div><br>
+    <!-- <button>Submit</button> -->
+    <div class="buttons">
+    <button type="button" class="btn btn-secondary btn-lg m-1">Submit</button>
+    <button type="button" class="btn btn-primary btn-lg m-1">Log In</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let btn = document.querySelector("button");
+        btn.addEventListener('click', async function(e){
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("pass").value;
+            let confirmPassword = document.getElementById("Conpass").value;
+
+            let resp = await axios.post('/signUp', {name,email,password,confirmPassword});
+            console.log("resp",resp);
+        });
+    </script>
+</body>
+</html>
