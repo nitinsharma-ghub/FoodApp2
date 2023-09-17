@@ -2,7 +2,7 @@ var validator = require("email-validator");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 
-let db_link = 'mongodb+srv://admin:uozJh4TeYhRqpUvx@cluster0.sfvw8nm.mongodb.net/?retryWrites=true&w=majority'
+let db_link = 'mongodb+srv://.sfvw8nm.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(db_link)
 .then(function(db){
     console.log("Database Connected");
