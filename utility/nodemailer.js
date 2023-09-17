@@ -6,12 +6,12 @@ const nodemailer = require("nodemailer");
 
 module.exports.sendMail = async function sendMail(str,data){
     let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
+        host: "gmail.com",
+        port: '***',
         secure: false, // true for 465, false for other ports
         auth: {
-          user: "sharma.89@iitj.ac.in", // generated ethereal user
-          pass: "ocxauzeqjssgcdsk", // generated ethereal password
+          user: "sharma.ac.in", // generated ethereal user
+          pass: "ocxa", // generated ethereal password
         },
       });
 
