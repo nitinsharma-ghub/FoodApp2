@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let db_link = 'mongodb+srv://admin:uozJh4TeYhRqpUvx@cluster0.sfvw8nm.mongodb.net/?retryWrites=true&w=majority'
+let db_link = 'mongodb+srv://admin:\0.sfvw8nm.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(db_link)
 .then(function(db){
     console.log("Plan Database Connected");
